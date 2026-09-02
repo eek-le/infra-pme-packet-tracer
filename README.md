@@ -7,7 +7,7 @@ Ce projet présente la conception et la configuration d'une infrastructure rése
 
 ## Architecture et Topologie Réseau
 
-### 1. Plan de Segmentation (VLANs & Adressage)
+### 1. Plan de Segmentation (VLANs et Adressage)
   | Nom du VLAN | ID VLAN | Usage / Équipements rattachés | Plage d'adressage |
 - | **VLAN_USERS** | 10 | Utilisateurs Postes fixes, PC Portables (Wi-Fi_Entreprise) | `172.16.1.0/24` |
 - | **VLAN_SERVERS** | 20 | Serveur d'Entreprise, Imprimante | `172.16.2.0/24` |
@@ -27,7 +27,7 @@ Ce projet présente la conception et la configuration d'une infrastructure rése
 * **Sortie FAI / Accès Internet :** Traduction d'adresses (NAT/PAT) configurée sur le routeur entreprise connecté à la Box FAI.
 
 
-## Schéma du Lab & Fichiers
+## Schéma du Lab et Fichiers
 
 * **Fichier du Lab :** Le fichier d'architecture `.pkt` est disponible à la racine de ce dépôt.
 * **Outil utilisé :** Cisco Packet Tracer
