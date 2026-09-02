@@ -44,3 +44,5 @@ Particulierement, à cause des limitations de Packet tracer, il est impossible d
 * **Fichier du Lab :** Le fichier d'architecture `.pkt` est disponible à la racine de ce dépôt.
 * **Outil utilisé :** Cisco Packet Tracer
 
+## Pour l'acces au management des equipements, veuillez consulter le fichier `administration.md` 
+
