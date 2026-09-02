@@ -13,7 +13,7 @@ Ce projet présente la conception et la configuration d'une infrastructure rése
 - | **VLAN_SERVERS** | 20 | Serveur d'Entreprise, Imprimante | `172.16.2.0/24` |
 - | **VLAN_MGMT** | 30 | Administration (Switchs, APs, Router) | `172.16.3.0/24` |
 - | **VLAN_GUEST** | 40 | Wi-Fi Invités / Visiteurs | `172.16.4.0/24` |
-- | **VLAN_NATIVE** | 999 | VLAN Natif (Blackhole / Inutilisé) | Unassigned |
+- | **VLAN_NATIVE** | 99 | VLAN Natif (Blackhole / Inutilisé) | Unassigned |
 
 
 ## Sécurité et Choix Techniques
