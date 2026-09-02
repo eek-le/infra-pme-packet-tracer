@@ -32,14 +32,14 @@ Ce projet présente la conception et la configuration d'une infrastructure rése
 - **Désactivation des ports inutilisés**
 - **Spanning tree :** pour éviter les boucles réseau.
 
-### Access Points
+### Access Points (AP-01 et AP-02)
 - **SSIDs Wi-Fi Mapping :**
   * `Wi-fi_entreprise` (WPA2) -> Mappé directement sur le **VLAN 10 (USERS)**.
   * `Wi-fi_visiteurs` (sans mot de passe) -> Mappé et isolé sur le **VLAN 40 (GUEST)**.
 Particulierement, à cause des limitations de Packet tracer, il est impossible de deployer un controlleur d'APs et qu'un seul AP puisse diffuser plusieurs SSIDs, alors chaques APs du réseau diffuse uniquement un seul SSID neamoins cela paraît transparent pour les utilisateurs.
 
 
-## Schéma du Lab & Fichiers
+## Schéma du Lab et Fichiers
 
 * **Fichier du Lab :** Le fichier d'architecture `.pkt` est disponible à la racine de ce dépôt.
 * **Outil utilisé :** Cisco Packet Tracer
