@@ -16,18 +16,30 @@ Ce projet présente la conception et la configuration d'une infrastructure rése
 - | **VLAN_NATIVE** | 99 | VLAN Natif (Blackhole / Inutilisé) | Unassigned |
 
 
-## Sécurité et Choix Techniques
+## Equipement et Configuration 
 
-- **Trunk et Encapsulation 802.1Q :** Mis en place sur toutes les liaisons inter-équipements (Routeur - Switch - Access Points).
-- **Protection VLAN Hopping :** Le VLAN Natif par défaut (VLAN 1) a été désactivé et remplacé par un **VLAN Natif dédié (VLAN 99 Blackhole)** sans aucun accès.
+### Box FAI (Box)
+- **DMZ :** configuré vers le routeur d'entreprise
+
+### Routeur d'entreprise (RT-01)
+- **NAT Overvoad/PAT :** traduction d'adresses sur l'interface WAN Gig0/0
+- **Pools DHCP et Routage Inter-VLAN (Router-on-a-Stick) :** activation de serveurs DHCP via les sub-interfaces pour filtrer les communications inter-services.
+
+### Switch (SW-01)
+- **Repartion des ports :** definit le plan d'affectation des ports sur le switch
+- **Access, Trunk et Encapsulation 802.1Q :** creation de vlans et mis en place du trunk sur toutes les liaisons inter-équipements (Routeur <-> Switch <-> Access Points).
+- **VLAN Natif :** le VLAN Natif par défaut (VLAN 1) a été désactivé et remplacé par un VLAN Natif dédié (VLAN 99 Blackhole) sans aucun accès pour garantir la protection VLAN Hopping
+- **Désactivation des ports inutilisés**
+- **Spanning tree :** pour éviter les boucles réseau.
+
+### Access Points
 - **SSIDs Wi-Fi Mapping :**
   * `Wi-fi_entreprise` (WPA2) -> Mappé directement sur le **VLAN 10 (USERS)**.
   * `Wi-fi_visiteurs` (sans mot de passe) -> Mappé et isolé sur le **VLAN 40 (GUEST)**.
-- **Routage Inter-VLAN (Router-on-a-Stick) :** Configuré sur le routeur d'entreprise via sub-interfaces pour filtrer les communications inter-services.
-* **Sortie FAI / Accès Internet :** Traduction d'adresses (NAT/PAT) configurée sur le routeur entreprise connecté à la Box FAI.
+Particulierement, à cause des limitations de Packet tracer, il est impossible de deployer un controlleur d'APs et qu'un seul AP puisse diffuser plusieurs SSIDs, alors chaques APs du réseau diffuse uniquement un seul SSID neamoins cela paraît transparent pour les utilisateurs.
 
 
-## Schéma du Lab et Fichiers
+## Schéma du Lab & Fichiers
 
 * **Fichier du Lab :** Le fichier d'architecture `.pkt` est disponible à la racine de ce dépôt.
 * **Outil utilisé :** Cisco Packet Tracer
