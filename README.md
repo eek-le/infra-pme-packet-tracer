@@ -8,7 +8,7 @@ Ce projet présente la conception et la configuration d'une infrastructure rése
 ## Architecture et Topologie Réseau
 
 ### 1. Plan de Segmentation (VLANs & Adressage)
-| Nom du VLAN | ID VLAN | Usage / Équipements rattachés | Plage d'adressage |
+  | Nom du VLAN | ID VLAN | Usage / Équipements rattachés | Plage d'adressage |
 - | **VLAN_USERS** | 10 | Utilisateurs Postes fixes, PC Portables (Wi-Fi_Entreprise) | `172.16.1.0/24` |
 - | **VLAN_SERVERS** | 20 | Serveur d'Entreprise, Imprimante | `172.16.2.0/24` |
 - | **VLAN_MGMT** | 30 | Administration (Switchs, APs, Router) | `172.16.3.0/24` |
